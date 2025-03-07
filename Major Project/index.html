@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App ⛅</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <h1>Jyoti Rana</h1>
+        <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="cityInput" placeholder="Enter city name...">
+            </div>
+            <button onclick="searchWeather()"><i class="fas fa-search-location"></i> Search</button>
+        </div>
+
+        <div class="weather-grid">
+            <div class="weather-card current-weather" id="currentWeather"></div>
+            <div class="weather-card" id="weatherDetails">
+                <h2>Weather Details</h2>
+                <div class="weather-details" id="weatherDetailsContent"></div>
+            </div>
+        </div>
+
+        <div class="weather-card chart-container">
+            <canvas id="tempChart"></canvas>
+        </div>
+
+        <div class="weather-card chart-container">
+            <canvas id="humidityChart"></canvas>
+        </div>
+
+        <div class="daily-forecast" id="dailyForecast"></div>
+    </div>
+
+    <div id="loading" class="loading">
+        <div class="loader"></div>
+    </div>
+
+    <footer>
+        <p>Designed and Developed by <span class="footer-name">Jyoti Rana</span></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
