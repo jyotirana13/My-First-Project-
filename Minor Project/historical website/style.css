@@ -1,0 +1,227 @@
+:root {
+    --primary-color: #1e1e1e;
+    --accent-color: #d4af37;
+    --text-light: #ffffff;
+    --bg-light: #f8f9fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #00b36b, #00b36b);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.logo {
+    color: var(--text-light);
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Navigation Links Hover Effect */
+.nav-links a {
+    position: relative;
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    padding: 5px 0;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url('https://th.bing.com/th/id/OIP.OcaZ2jym7NGKbaXQ2XEXGgHaEK?rs=1&pid=ImgDetMain') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero-heading {
+    font-size: 4.5rem;
+    font-family: 'Roboto Slab', serif;
+    background: linear-gradient(45deg, #d4af37, #c53d3d, #3d5ec5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    animation: textGlow 0s infinite alternate;
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    }
+
+    100% {
+        text-shadow: 0 0 20px rgba(212, 175, 55, 0.8), 0 0 30px rgba(197, 61, 61, 0.6);
+    }
+}
+
+.hero-subheading {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.heritage-grid {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.heritage-card {
+    display: flex;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    min-height: 400px;
+}
+
+.heritage-card:hover {
+    transform: translateY(-10px);
+}
+
+.card-image {
+    flex: 1;
+    width: 50%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+}
+
+.heritage-card:hover .card-image {
+    transform: scale(1.08);
+}
+
+.card-content {
+    flex: 1;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-content h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-family: 'Roboto Slab', serif;
+    font-size: 2.2rem;
+}
+
+.card-content p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.learn-more {
+    align-self: flex-start;
+    padding: 0.8rem 1.5rem;
+    background: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.learn-more:hover {
+    background: #b7952b;
+}
+
+footer {
+    background: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    background: linear-gradient(135deg, #f7f418, #00b36b);
+    padding: 1.5rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .heritage-card {
+        flex-direction: column;
+    }
+
+    .card-image {
+        width: 100%;
+        height: 300px;
+    }
+
+    .hero-heading {
+        font-size: 3rem;
+    }
+
+    .hero-subheading {
+        font-size: 1.2rem;
+    }
+}
